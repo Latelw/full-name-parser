@@ -20,12 +20,17 @@ public class FullNameParser {
         int secondSpace = fullName.indexOf(" ", indexFirstName + 1);
         //Find Last name??
         //Middle name returns -1 and breaks the code
+
         if (secondSpace == -1){
             lastName = fullName.substring(indexFirstName + 1).trim();
 
-        }else
-            middleName = fullName.substring(indexFirstName, secondSpace).trim();
-            lastName = fullName.substring(secondSpace + 1).trim();
+        }else {
+            middleName = fullName.substring(indexFirstName + 1, secondSpace).trim();
+            lastName = fullName.substring(secondSpace).trim();
+
+        }
+
+
 
 
         //Print full name//
@@ -35,9 +40,9 @@ public class FullNameParser {
             System.out.println("none");
 
         }else {
-            System.out.println("Middle name; " + middleName);
+            System.out.println("Middle name: " + middleName);
         }
-        System.out.println("Last Name :" + lastName);
+        System.out.println("Last Name : " + lastName);
 
 
 
