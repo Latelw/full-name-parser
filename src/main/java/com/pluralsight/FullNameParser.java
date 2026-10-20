@@ -13,13 +13,20 @@ public class FullNameParser {
         //Find the space, cut off first name.
         int indexFirstName = fullName.indexOf(" ");
         String firstName = fullName.substring(0, indexFirstName).trim();
+        String middleName = "";
+        String lastName = "";
 
         //Find the middle name??//
         int secondSpace = fullName.indexOf(" ", indexFirstName + 1);
-        String middleName = fullName.substring(indexFirstName, secondSpace).trim();
-
         //Find Last name??
-        String lastName = fullName.substring(secondSpace).trim();
+        //Middle name returns -1 and breaks the code
+        if (secondSpace == -1){
+            lastName = fullName.substring(indexFirstName + 1).trim();
+
+        }else
+            middleName = fullName.substring(indexFirstName, secondSpace).trim();
+            lastName = fullName.substring(secondSpace + 1).trim();
+
 
         //Print full name//
         System.out.println("First name: " + firstName);
