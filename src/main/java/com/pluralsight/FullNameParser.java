@@ -44,6 +44,10 @@ public class FullNameParser {
         }
         System.out.println("Last Name : " + lastName);
 
+        scan.close();
+
+
+
 
 
 
